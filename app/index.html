@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/decimal.js@10.4.3/decimal.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Advanced Currency Converter</h1>
+            <p>Convert between 200+ currencies with high precision</p>
+            <button id="resetBtn" class="btn btn--secondary btn--sm">Reset to Defaults</button>
+        </header>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="loading-spinner"></div>
+            <span>Loading exchange rates...</span>
+        </div>
+
+        <main class="converter-grid">
+            <!-- First Converter -->
+            <div class="converter-card" data-converter="0">
+                <div class="converter-header">
+                    <h3>Currency 1</h3>
+                    <div class="status-indicator" id="status-0"></div>
+                </div>
+                <div class="form-group">
+                    <label for="currency-0" class="form-label">Currency</label>
+                    <select id="currency-0" class="form-control currency-select">
+                        <option value="">Loading currencies...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount-0" class="form-label">Amount</label>
+                    <input 
+                        type="text" 
+                        id="amount-0" 
+                        class="form-control amount-input" 
+                        placeholder="Enter amount"
+                        autocomplete="off"
+                        inputmode="decimal"
+                    >
+                </div>
+                <div class="currency-info" id="info-0"></div>
+            </div>
+
+            <!-- Second Converter -->
+            <div class="converter-card" data-converter="1">
+                <div class="converter-header">
+                    <h3>Currency 2</h3>
+                    <div class="status-indicator" id="status-1"></div>
+                </div>
+                <div class="form-group">
+                    <label for="currency-1" class="form-label">Currency</label>
+                    <select id="currency-1" class="form-control currency-select">
+                        <option value="">Loading currencies...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount-1" class="form-label">Amount</label>
+                    <input 
+                        type="text" 
+                        id="amount-1" 
+                        class="form-control amount-input" 
+                        placeholder="Enter amount"
+                        autocomplete="off"
+                        inputmode="decimal"
+                    >
+                </div>
+                <div class="currency-info" id="info-1"></div>
+            </div>
+
+            <!-- Third Converter -->
+            <div class="converter-card" data-converter="2">
+                <div class="converter-header">
+                    <h3>Currency 3</h3>
+                    <div class="status-indicator" id="status-2"></div>
+                </div>
+                <div class="form-group">
+                    <label for="currency-2" class="form-label">Currency</label>
+                    <select id="currency-2" class="form-control currency-select">
+                        <option value="">Loading currencies...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount-2" class="form-label">Amount</label>
+                    <input 
+                        type="text" 
+                        id="amount-2" 
+                        class="form-control amount-input" 
+                        placeholder="Enter amount"
+                        autocomplete="off"
+                        inputmode="decimal"
+                    >
+                </div>
+                <div class="currency-info" id="info-2"></div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Powered by high-precision decimal calculations | Exchange rates updated in real-time</p>
+            <div class="api-status" id="apiStatus">
+                <span class="status status--info">API Ready</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
